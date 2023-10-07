@@ -1,0 +1,21 @@
+const express = require("express");
+const {
+  addTransaction,
+  getAllTransaction,
+  editTransaction,
+  deleteTransaction,
+} = require("../controllers/transactionCtrl");
+
+//router object
+const router = express.Router();
+
+//Routes
+//and transaction POST
+router.post("/add-transaction", addTransaction);
+router.post("/edit-transaction", editTransaction);
+router.post("/delete-transaction", deleteTransaction);
+
+//get transaction
+router.post("/get-transaction", getAllTransaction);
+
+module.exports = router;
